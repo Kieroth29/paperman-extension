@@ -1,0 +1,23 @@
+body{
+    width: fit-content;
+    height: fit-content;
+}
+
+div.header {
+    display: flex;
+    flex-direction: row;
+}
+
+div.main {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    width: fit-content;
+    height: fit-content;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5%;
+}

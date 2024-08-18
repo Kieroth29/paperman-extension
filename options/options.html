@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./options.css">
+    <title>Paperman settings</title>
+    <script type="module" src="./options.js" async></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../static/icons/icon16.png" alt="Paperman icon">
+        <a href="../popup/popup.html"><img src="../static/icons/home.png"></a>
+    </div>
+
+    <div class="main">
+        <form id="change-interval-form">
+            <label for="interval">Change recommendations interval</label>
+            <select name="interval" id="interval">
+                <option value="0">1 min</option>
+                <option value="1">3 hours</option>
+                <option value="2">6 hours</option>
+                <option value="3">12 hours</option>
+                <option value="4">24 hours</option>
+            </select>
+
+            <input type="button" id="change-interval-btn" name="change-interval-btn" value="Save">
+        </form>
+
+        <form id="sources-form">
+            <label for="orcid">Insert your 16-digit ORCiD</label>
+            <input type="text" id="orcid" name="orcid" placeholder="0000-0000-0000-0000">
+
+            <input type="button" id="sources-btn" name="sources-btn" value="Save">
+        </form>
+    </div>
+</body>
+
+</html>

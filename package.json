@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "chrome-types": "^0.1.231"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.245",
+    "@types/jsdom": "^21.1.3",
+    "@types/node": "^20.6.2",
+    "jsdom": "^22.1.0"
+  }
+}
