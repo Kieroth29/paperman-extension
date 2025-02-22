@@ -67,18 +67,15 @@ function setRecommendationInterval(option) {
     let interval = 0;
     switch (option) {
         case 0:
-            interval = 1;
-            break;
-        case 1:
             interval = 180;
             break;
-        case 2:
+        case 1:
             interval = 360;
             break;
-        case 3:
+        case 2:
             interval = 720;
             break;
-        case 4:
+        case 3:
             interval = 1440;
             break;
         default:
@@ -88,4 +85,5 @@ function setRecommendationInterval(option) {
         delayInMinutes: interval,
         periodInMinutes: interval,
     });
+    alert("Recommendation interval edited successfully");
 }
