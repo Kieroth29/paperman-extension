@@ -1,4 +1,4 @@
-const PAPERMAN_API_HOST = "https://paperman.kieroth29.xyz";
+import { PAPERMAN_API_HOST } from "../utils/constants";
 
 export async function getAuthToken(): Promise<string | undefined> {
   const { userId } = await chrome.storage.local.get("userId");

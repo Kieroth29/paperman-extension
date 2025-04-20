@@ -1,7 +1,6 @@
 import { getAuthToken, validateToken } from "../auth/auth.js";
 import { PapermanAPIResponse, Publication } from "../types/recommendation.js";
-
-const PAPERMAN_API_HOST = "https://paperman.kieroth29.xyz";
+import { PAPERMAN_API_HOST } from "../utils/constants.js";
 
 export async function getRecommendationsAlarm(): Promise<Array<Publication>> {
   const { userId } = await chrome.storage.local.get("userId");
