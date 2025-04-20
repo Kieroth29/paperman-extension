@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Paperman - Article recommendations",
   "short_name": "Paperman",
-  "version": "0.1.3",
-  "version_name": "0.1.3",
+  "version": "0.1.4",
+  "version_name": "0.1.4",
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -37,7 +37,8 @@
         "alarm/alarm.js",
         "options/options.js",
         "popup/popup.js",
-        "recommendations/recommendations.js"
+        "recommendations/recommendations.js",
+        "utils/constants.js"
       ]
     }
   ],

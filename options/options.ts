@@ -1,11 +1,10 @@
 import { getAuthToken } from "../auth/auth.js";
+import { PAPERMAN_API_HOST } from "../utils/constants.js";
 
 const intervalButton = <HTMLButtonElement>(
   document.getElementById("change-interval-btn")
 );
 const sourcesButton = <HTMLButtonElement>document.getElementById("sources-btn");
-
-const PAPERMAN_API_HOST = "https://paperman.kieroth29.xyz";
 
 const { orcid: userOrcid } = await chrome.storage.local.get("orcid");
 
