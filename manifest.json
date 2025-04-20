@@ -2,8 +2,8 @@
   "manifest_version": 3,
   "name": "Paperman - Article recommendations",
   "short_name": "Paperman",
-  "version": "0.1.2",
-  "version_name": "0.1.2",
+  "version": "0.1.3",
+  "version_name": "0.1.3",
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -49,14 +49,11 @@
     "open_in_tab": true
   },
   "permissions": [
-    "activeTab",
     "alarms",
     "notifications",
-    "scripting",
     "storage"
   ],
   "host_permissions": [
-    "https://paperman.kieroth29.xyz/*",
-    "https://localhost:*/*"
+    "https://paperman.kieroth29.xyz/*"
   ]
 }

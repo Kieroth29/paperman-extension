@@ -1,23 +1,75 @@
-body{
-    width: fit-content;
-    height: fit-content;
+body {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
-div.header {
-    display: flex;
-    flex-direction: row;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff;
 }
 
-div.main {
-    display: flex;
-    flex-direction: column;
-    margin: 2%;
-    width: fit-content;
-    height: fit-content;
+.header img {
+  height: 24px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5%;
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.main h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+#latest-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recommmendation {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+}
+
+.recommendation-title a {
+  font-size: 1.1rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.recommendation-title a:hover {
+  text-decoration: underline;
+}
+
+.recommmendation h4 {
+  font-size: 0.9rem;
+  margin: 8px 0 4px;
+}
+
+.recommmendation h5 {
+  font-size: 0.8rem;
+  margin: 0;
+  font-weight: normal;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header img,
+  .header a img {
+    height: auto; /* Adjust icon sizes for smaller screens */
+    max-height: 20px;
+    max-width: auto;
+    margin-left: auto;
+  }
 }
