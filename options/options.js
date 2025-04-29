@@ -41,6 +41,12 @@ sourcesButton.addEventListener("click", async () => {
     alert("Sources edited successfully");
     window.close();
 });
+async function createAlarmIfNotAvailable() {
+    const alarms = await chrome.alarms.getAll();
+    if (!alarms.find((alarm) => alarm.name === "paperman-recommendation")) {
+        setRecommendationInterval(1, "sources");
+    }
+}
 async function createUser(sources, userId) {
     const response = await fetch(`${PAPERMAN_API_HOST}/user`, {
         method: "POST",
@@ -49,6 +55,7 @@ async function createUser(sources, userId) {
         },
         body: JSON.stringify(sources),
     });
+    await createAlarmIfNotAvailable();
     return response;
 }
 async function updateUser(sources, userId, authToken) {
@@ -60,9 +67,10 @@ async function updateUser(sources, userId, authToken) {
         },
         body: JSON.stringify(sources),
     });
+    await createAlarmIfNotAvailable();
     return response;
 }
-function setRecommendationInterval(option) {
+function setRecommendationInterval(option, origin) {
     chrome.alarms.clearAll();
     let interval = 0;
     switch (option) {
@@ -85,5 +93,7 @@ function setRecommendationInterval(option) {
         delayInMinutes: interval,
         periodInMinutes: interval,
     });
-    alert("Recommendation interval edited successfully");
+    if (origin !== "sources") {
+        alert("Recommendation interval edited successfully");
+    }
 }
