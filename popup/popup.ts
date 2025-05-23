@@ -52,19 +52,20 @@ chrome.storage.local.get(["latestRecommendations"]).then(async (result) => {
         </div>
         `;
 
+      let { authToken } = await chrome.storage.local.get("authToken");
+
+      const tokenIsValid = await validateToken();
+
+      if (!tokenIsValid) {
+        authToken = await getAuthToken();
+      }
+
       setTimeout(async () => {
         const starContainer = recommendationsDiv.querySelector(
           `.star-rating[data-url="${recommendationKey}"]`
         );
 
         const { userId } = await chrome.storage.local.get(["userId"]);
-        let { authToken } = await chrome.storage.local.get("authToken");
-
-        const tokenIsValid = await validateToken();
-
-        if (!tokenIsValid) {
-          authToken = await getAuthToken();
-        }
 
         if (starContainer) {
           const stars =
@@ -90,7 +91,7 @@ chrome.storage.local.get(["latestRecommendations"]).then(async (result) => {
               fetch(`${PAPERMAN_API_HOST}/publications/rate`, {
                 method: "POST",
                 headers: {
-                  Authorization: authToken || (await getAuthToken()),
+                  Authorization: authToken,
                   UserId: userId,
                 },
                 body: JSON.stringify({
